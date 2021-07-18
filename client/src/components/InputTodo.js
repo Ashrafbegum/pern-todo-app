@@ -6,12 +6,13 @@ const InputTodo = () => {
         e.preventDefault()
         try{
             const body = {task}
-            const response = await fetch("http://localhost:8000/todos", {
+            // const response = await fetch("http://localhost:8000/todos", {
+            await fetch("http://localhost:8000/todos", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             })
-            console.log(response)
+            //console.log(response)
             window.location = "/"
         } catch (err) {
             console.error(err.message)
